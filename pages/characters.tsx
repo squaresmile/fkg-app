@@ -35,7 +35,10 @@ const CharactersPage = () => {
                                     <Link
                                         href={`/character/${char.MasterCharacterID}`}
                                     >
-                                        <a className="text-decoration-none">
+                                        <a
+                                            className="text-decoration-none"
+                                            lang="ja-JP"
+                                        >
                                             {char.Fullname}
                                         </a>
                                     </Link>
