@@ -16,6 +16,7 @@ const CharactersPage = () => {
                 <thead>
                     <tr>
                         <th className="text-center">ID</th>
+                        <th className="text-center">Book ID</th>
                         <th className="text-center">Rarity</th>
                         <th className="text-center">Name</th>
                     </tr>
@@ -25,11 +26,18 @@ const CharactersPage = () => {
                         .filter(
                             (char) =>
                                 char.MaxEvolveFlag === 0 &&
-                                char.MaxFloweringFlag === 0
+                                char.MaxFloweringFlag === 0 &&
+                                char.PartySetEnableFlag === 1
+                        )
+                        .sort(
+                            (a, b) =>
+                                a.MasterCharacterBookID -
+                                b.MasterCharacterBookID
                         )
                         .map((char) => (
                             <tr key={char.MasterCharacterID}>
                                 <td>{char.MasterCharacterID}</td>
+                                <td>{char.MasterCharacterBookID}</td>
                                 <td>{char.Rarity}</td>
                                 <td>
                                     <Link
