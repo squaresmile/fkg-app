@@ -83,7 +83,7 @@ export const HScenePage = ({ sceneType }: { sceneType: CharacterScene }) => {
                 (script) => setScript(script)
             );
         }
-    }, [characterID]);
+    }, [characterID, sceneType]);
 
     if (script === "") return null;
 
