@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Cereal's Flower Knight Girl App</title>
+                <title>Cereal&apos;s Flower Knight Girl App</title>
                 <meta
                     name="description"
                     content="Cereal's Flower Knight Girl App"
