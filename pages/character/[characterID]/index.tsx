@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -6,7 +7,14 @@ const CharacterPage = () => {
     const characterID = router.query.characterID as string;
 
     return (
-        <div>
+        <>
+            <Head>
+                <title>FKG Character {characterID}</title>
+                <meta
+                    name="description"
+                    content={`Flower Knight Girl Character ${characterID}`}
+                />
+            </Head>
             <h1>Character {characterID}</h1>
             <b>Scenes</b>
             <ul>
@@ -26,7 +34,7 @@ const CharacterPage = () => {
                     </Link>
                 </li>
             </ul>
-        </div>
+        </>
     );
 };
 

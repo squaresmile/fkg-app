@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
@@ -85,12 +86,32 @@ export const HScenePage = ({ sceneType }: { sceneType: CharacterScene }) => {
         }
     }, [characterID, sceneType]);
 
-    if (script === "") return null;
+    let prettySceneName = "";
+    switch (sceneType) {
+        case "Summon":
+            prettySceneName = "Summon";
+            break;
+        case "HScene1":
+            prettySceneName = "H Scene 1";
+            break;
+        case "HScene2":
+            prettySceneName = "H Scene 2";
+            break;
+    }
 
     return (
-        <div>
-            <ScriptTable lines={parseScript(script)} />
-        </div>
+        <>
+            <Head>
+                <title>
+                    FKG Character {characterID} {prettySceneName}
+                </title>
+                <meta
+                    name="description"
+                    content={`Flower Knight Girl Character ${prettySceneName}`}
+                />
+            </Head>
+            {script === "" ? null : <ScriptTable lines={parseScript(script)} />}
+        </>
     );
 };
 

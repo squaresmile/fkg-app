@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
@@ -12,6 +13,13 @@ const CharactersPage = () => {
 
     return (
         <>
+            <Head>
+                <title>FKG Characters</title>
+                <meta
+                    name="description"
+                    content="Flower Knight Girl Character List"
+                />
+            </Head>
             <Table>
                 <thead>
                     <tr>
